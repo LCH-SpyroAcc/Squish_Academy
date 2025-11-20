@@ -78,11 +78,26 @@ def step(context):
     test.compare(str(waitForObjectExists(names.continue_Text).text), "Continue")
     test.compare(waitForObjectExists(names.continue_Text).visible, True)
     mouseClick(waitForObject(names.continue_Text), MouseButton.LeftButton)
-    #test.compare(waitForObject(names.cup_Image_2))
-    #test.compare(waitForImage("dark_cup.svgz"))
-    #waitForImage("dark_cup.svgz", {}, waitForObject( names.cup_Image_2 ) )
     test.compare(str(waitForObjectExists(names.brewing_Text).text), "Brewing...")
     test.compare(waitForObjectExists(names.brewing_Text).visible, True)
+
 @Then("coffee is ready")
 def step(context):
     test.compare(waitForObjectExists(names.coffee_QQuickApplicationWindow).visible, True)
+
+@Then("I verify if application match reference screenshot")
+def step(context):
+    test.warning("TODO implement I verify if application match reference screenshot")
+    
+
+    
+@Then("user can add sugar and milk to his Latte")
+def step(context):
+    mouseClick(waitForObject(names.o_MultiEffect_2), 313, 291, Qt.LeftButton) #set sugar
+    mouseClick(waitForObject(names.o_MultiEffect_2), 484, 128, Qt.LeftButton) #set milk
+    test.compare(waitForObjectExists(names.sugar_Image).opacity, 0.5) #check sugar
+    test.compare(waitForObjectExists(names.milk_Image).opacity, 1) #check milk
+    
+    
+    
+    

@@ -29,3 +29,6 @@ coffee_Progress = {"container": coffee_QQuickApplicationWindow, "type": "Progres
 o_MultiEffect_5 = {"container": coffee_Progress, "type": "MultiEffect", "unnamed": 1, "visible": True}
 cup_Image_2 = {"container": coffee_Ready, "id": "cup", "source": "./images/Cups/dark_cup.svgz", "type": "Image", "unnamed": 1, "visible": True}
 brewing_Text = {"container": coffee_Progress, "text": "Brewing...", "type": "Text", "unnamed": 1, "visible": True}
+sugar_Image = {"container": coffee_Settings, "id": "sugar", "source": "./images/Ingredients/sugar.svg", "type": "Image", "unnamed": 1, "visible": True}
+coffee_image_IconImage = {"container": coffee_QQuickApplicationWindow, "objectName": "image", "source": "qrc:/qt/qml/demos/coffee/images/icons/keyboard_backspace_black_left.svg", "type": "IconImage", "visible": True}
+milk_Image = {"container": coffee_Settings, "id": "milk", "source": "./images/Ingredients/milk.svg", "type": "Image", "unnamed": 1, "visible": True}
