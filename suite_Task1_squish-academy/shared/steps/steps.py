@@ -83,13 +83,7 @@ def step(context):
 
 @Then("coffee is ready")
 def step(context):
-    test.compare(waitForObjectExists(names.coffee_QQuickApplicationWindow).visible, True)
-
-@Then("I verify if application match reference screenshot")
-def step(context):
-    test.warning("TODO implement I verify if application match reference screenshot")
-    
-
+    test.compare(waitForObjectExists(names.coffee_QQuickApplicationWindow).visible, True)   
     
 @Then("user can add sugar and milk to his Latte")
 def step(context):
@@ -97,7 +91,17 @@ def step(context):
     mouseClick(waitForObject(names.o_MultiEffect_2), 484, 128, Qt.LeftButton) #set milk
     test.compare(waitForObjectExists(names.sugar_Image).opacity, 0.5) #check sugar
     test.compare(waitForObjectExists(names.milk_Image).opacity, 1) #check milk
+
+@Then("user can increase amount of coffee and add foam to his espresso")
+def step(context):
+    mouseClick(waitForObject(names.o_MultiEffect_2), 482, 49, Qt.LeftButton) #amount of coffee
+    mouseClick(waitForObject(names.o_MultiEffect_2), 204, 209, Qt.LeftButton) #add foam
+    test.compare(waitForObjectExists(names.coffee_Image).opacity, 1) #check ml of coffee
+    test.compare(waitForObjectExists(names.foam_Image).opacity, 1) #check if foam is added
     
-    
-    
-    
+@Then("user can decrease foam and add sugar to his cappucino")
+def step(context):
+    mouseClick(waitForObject(names.o_MultiEffect_2), 478, 292, Qt.LeftButton) #set foam
+    mouseClick(waitForObject(names.o_MultiEffect_2), 315, 209, Qt.LeftButton) #set sugar
+    test.compare(waitForObjectExists(names.foam_Image).opacity, 1) #check if foam is decreased
+    test.compare(waitForObjectExists(names.sugar_Image).opacity, 1) #check sugar

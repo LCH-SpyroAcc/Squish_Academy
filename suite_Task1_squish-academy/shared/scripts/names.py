@@ -32,3 +32,5 @@ brewing_Text = {"container": coffee_Progress, "text": "Brewing...", "type": "Tex
 sugar_Image = {"container": coffee_Settings, "id": "sugar", "source": "./images/Ingredients/sugar.svg", "type": "Image", "unnamed": 1, "visible": True}
 coffee_image_IconImage = {"container": coffee_QQuickApplicationWindow, "objectName": "image", "source": "qrc:/qt/qml/demos/coffee/images/icons/keyboard_backspace_black_left.svg", "type": "IconImage", "visible": True}
 milk_Image = {"container": coffee_Settings, "id": "milk", "source": "./images/Ingredients/milk.svg", "type": "Image", "unnamed": 1, "visible": True}
+coffee_Image = {"container": coffee_Settings, "id": "coffee", "source": "./images/Ingredients/espresso_coffee.svg", "type": "Image", "unnamed": 1, "visible": True}
+foam_Image = {"container": coffee_Settings, "id": "foam", "source": "./images/Ingredients/Milk_foam.svg", "type": "Image", "unnamed": 1, "visible": True}

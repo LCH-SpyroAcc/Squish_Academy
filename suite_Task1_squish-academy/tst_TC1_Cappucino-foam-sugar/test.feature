@@ -4,3 +4,4 @@ Feature: Coffee machine functional testing
         Given test application is running
          When I click on cappucino button
 		 Then cappucino make screen is displayed
+		 And user can decrease foam and add sugar to his cappucino
