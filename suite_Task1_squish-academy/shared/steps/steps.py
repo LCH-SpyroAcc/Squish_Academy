@@ -34,7 +34,23 @@ import names
 def step(context):
     startApplication("coffeemachine")
     test.log("Coffee machine is running")
-    mouseClick(waitForObject(names.home_Get_Started_Text), MouseButton.LeftButton)
+    #mouseClick(waitForObject(names.homeScreen_getStartedButton_text), MouseButton.LeftButton)
+
+@When("Start screen elements are displayed")
+def step(context):
+
+    welcome_screen_elements = [
+        names.homeScreen_coffeMachine_text,
+        names.homeScreen_coffeeCup_image,
+        names.homeScreen_flavorText_text,
+        names.homeScreen_getStartedButton_text,
+        names.homeScreen_getStartedButton_icon
+    ]
+    
+    for element in welcome_screen_elements:
+        if waitForObject(element):
+            test.passes(f"Element found: {element}")
+            #mouseClick(waitForObject(names.homeScreen_getStartedButton_text), MouseButton.LeftButton)
 
 @When("I click on cappucino button")
 def step(context):
@@ -105,3 +121,15 @@ def step(context):
     mouseClick(waitForObject(names.o_MultiEffect_2), 315, 209, Qt.LeftButton) #set sugar
     test.compare(waitForObjectExists(names.foam_Image).opacity, 1) #check if foam is decreased
     test.compare(waitForObjectExists(names.sugar_Image).opacity, 1) #check sugar
+
+@When("I click on ANY coffee")
+def step(context):
+    test.warning("TODO implement I click on ANY coffee")
+
+@Then("Verify theme button")
+def step(context):
+    test.warning("TODO implement Verify theme button")
+
+@Then("I click to start")
+def step(context):
+    mouseClick(waitForObject(names.homeScreen_getStartedButton_text), MouseButton.LeftButton)

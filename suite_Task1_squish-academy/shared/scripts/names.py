@@ -8,7 +8,6 @@ button_AbstractButton = {"checkable": True, "container": coffee_ChoosingCoffee, 
 o_MultiEffect = {"container": coffee_ChoosingCoffee, "occurrence": 2, "type": "MultiEffect", "unnamed": 1, "visible": True}
 coffee_home_Home = {"container": coffee_QQuickApplicationWindow, "id": "home", "type": "Home", "unnamed": 1, "visible": True}
 home_getStartedButton_CustomButton = {"checkable": False, "container": coffee_home_Home, "id": "getStartedButton", "type": "CustomButton", "unnamed": 1, "visible": True}
-home_Get_Started_Text = {"container": coffee_home_Home, "text": "Get Started", "type": "Text", "unnamed": 1, "visible": True}
 coffee_Cappuccino_Text = {"container": coffee_QQuickApplicationWindow, "text": "Cappuccino", "type": "Text", "unnamed": 1, "visible": True}
 button_AbstractButton_2 = {"checkable": True, "container": coffee_ChoosingCoffee, "id": "button", "occurrence": 2, "type": "AbstractButton", "unnamed": 1, "visible": True}
 coffee_Settings = {"container": coffee_QQuickApplicationWindow, "type": "Settings", "unnamed": 1, "visible": True}
@@ -34,3 +33,13 @@ coffee_image_IconImage = {"container": coffee_QQuickApplicationWindow, "objectNa
 milk_Image = {"container": coffee_Settings, "id": "milk", "source": "./images/Ingredients/milk.svg", "type": "Image", "unnamed": 1, "visible": True}
 coffee_Image = {"container": coffee_Settings, "id": "coffee", "source": "./images/Ingredients/espresso_coffee.svg", "type": "Image", "unnamed": 1, "visible": True}
 foam_Image = {"container": coffee_Settings, "id": "foam", "source": "./images/Ingredients/Milk_foam.svg", "type": "Image", "unnamed": 1, "visible": True}
+
+coffee_image_IconImage_2 = {"container": coffee_QQuickApplicationWindow, "objectName": "image", "source": "qrc:/qt/qml/demos/coffee/images/icons/light_mode_black_24dp.svg", "type": "IconImage", "visible": True}
+coffee_image_IconImage_3 = {"container": coffee_QQuickApplicationWindow, "objectName": "image", "source": "qrc:/qt/qml/demos/coffee/images/icons/dark_mode_black_24dp.svg", "type": "IconImage", "visible": True}
+
+homeScreen_coffeMachine_text = {"container": coffee_home_Home, "text": "Coffee Machine", "type": "Text", "unnamed": 1, "visible": True}
+#homeScreen_coffeeCup_image = {"container": coffee_home_Home, "id": "image", "source": "./images/Cups/home_dark.svg", "type": "Image", "unnamed": 1, "visible": True}
+homeScreen_flavorText_text = {"container": coffee_home_Home, "text": " pick your blend, tailor your flavors, and savor the \n perfection!", "type": "Text", "unnamed": 1, "visible": True}
+homeScreen_getStartedButton_text = {"container": coffee_home_Home, "text": "Get Started", "type": "Text", "unnamed": 1, "visible": True}
+homeScreen_getStartedButton_icon = {"container": coffee_home_Home, "id": "icon", "source": "./images/icons/keyboard_backspace_white_right.svg", "type": "Image", "unnamed": 1, "visible": True}
+homeScreen_coffeeCup_image = {"container": coffee_home_Home, "id": "image", "source": "./images/Cups/home_dark.svg", "type": "Image", "unnamed": 1, "visible": True}
