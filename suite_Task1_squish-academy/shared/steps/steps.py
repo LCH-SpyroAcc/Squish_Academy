@@ -138,4 +138,31 @@ def step(context):
     test.compare(str(waitForObjectExists(names.chooseCoffee_text).text), "Coffee Selection")
     test.compare(waitForObjectExists(names.chooseCoffee_text).color, "#121111")
     
+@Step("'|any|' card displays '|any|' ingredients and |integer| Mins preparation time")
+def step(context, coffee_type, ingredients, prep_time):
     
+    coffee_cards = None
+    match coffee_type:
+        case "Cappuccino":
+            coffee_cards = waitForObject(names.cappuccino_CoffeeCard)
+
+        case "Latte":
+            coffee_cards = waitFor0bject(names.latte_CoffeeCard)
+
+        case "Espresso":
+            coffee_cards = waitFor0bject(names.espresso_CoffeeCard)
+
+        case "Macchiato":
+            coffee_cards = waitFor0bject(names.macchiato_CoffeeCard)
+
+        case _:
+            test.fail("Incorrect coffee name provided")
+            
+    test.compare(card_object.coffeeName, coffee_type, "Checking if card name is correct")
+    test.compare(card_object.ingredients, ingredients, "Checking if coffee ingredients are correct")
+    test.compare(card_object.time, prep_time, "Checking if preparation time is correct")
+    
+
+@Then("selected coffee settings are original")
+def step(context):
+    test.warning("TODO implement selected coffee settings are original")

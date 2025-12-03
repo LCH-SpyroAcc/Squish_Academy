@@ -42,5 +42,12 @@ homeScreen_flavorText_text = {"container": coffee_home_Home, "text": " pick your
 homeScreen_getStartedButton_text = {"container": coffee_home_Home, "text": "Get Started", "type": "Text", "unnamed": 1, "visible": True}
 homeScreen_getStartedButton_icon = {"container": coffee_home_Home, "id": "icon", "source": "./images/icons/keyboard_backspace_white_right.svg", "type": "Image", "unnamed": 1, "visible": True}
 homeScreen_coffeeCup_image = {"container": coffee_home_Home, "id": "image", "source": "./images/Cups/home_dark.svg", "type": "Image", "unnamed": 1, "visible": True}
-
 chooseCoffee_text = {"container": coffee_QQuickApplicationWindow, "text": "Coffee Selection", "type": "Text", "unnamed": 1, "visible": True}
+
+
+coffee_cards = {"color": "#121212", "container": coffee_QQuickApplicationWindow, "type": "ApplicationFlow", "unnamed": 1, "visible": True}
+
+cappuccino_CoffeeCard = {"container": coffee_ChoosingCoffee, "id": "cappuccino", "type": "CoffeeCard", "unnamed": 1, "visible": True}
+macchiato_CoffeeCard = {"container": coffee_ChoosingCoffee, "id": "macchiato", "type": "CoffeeCard", "unnamed": 1, "visible": True}
+espresso_CoffeeCard = {"container": coffee_ChoosingCoffee, "id": "espresso", "type": "CoffeeCard", "unnamed": 1, "visible": True}
+latte_CoffeeCard = {"container": coffee_ChoosingCoffee, "id": "latte", "type": "CoffeeCard", "unnamed": 1, "visible": True}
