@@ -34,12 +34,13 @@ milk_Image = {"container": coffee_Settings, "id": "milk", "source": "./images/In
 coffee_Image = {"container": coffee_Settings, "id": "coffee", "source": "./images/Ingredients/espresso_coffee.svg", "type": "Image", "unnamed": 1, "visible": True}
 foam_Image = {"container": coffee_Settings, "id": "foam", "source": "./images/Ingredients/Milk_foam.svg", "type": "Image", "unnamed": 1, "visible": True}
 
-coffee_image_IconImage_2 = {"container": coffee_QQuickApplicationWindow, "objectName": "image", "source": "qrc:/qt/qml/demos/coffee/images/icons/light_mode_black_24dp.svg", "type": "IconImage", "visible": True}
+theme_button = {"container": coffee_QQuickApplicationWindow, "objectName": "image", "source": "qrc:/qt/qml/demos/coffee/images/icons/light_mode_black_24dp.svg", "type": "IconImage", "visible": True}
 coffee_image_IconImage_3 = {"container": coffee_QQuickApplicationWindow, "objectName": "image", "source": "qrc:/qt/qml/demos/coffee/images/icons/dark_mode_black_24dp.svg", "type": "IconImage", "visible": True}
 
 homeScreen_coffeMachine_text = {"container": coffee_home_Home, "text": "Coffee Machine", "type": "Text", "unnamed": 1, "visible": True}
-#homeScreen_coffeeCup_image = {"container": coffee_home_Home, "id": "image", "source": "./images/Cups/home_dark.svg", "type": "Image", "unnamed": 1, "visible": True}
 homeScreen_flavorText_text = {"container": coffee_home_Home, "text": " pick your blend, tailor your flavors, and savor the \n perfection!", "type": "Text", "unnamed": 1, "visible": True}
 homeScreen_getStartedButton_text = {"container": coffee_home_Home, "text": "Get Started", "type": "Text", "unnamed": 1, "visible": True}
 homeScreen_getStartedButton_icon = {"container": coffee_home_Home, "id": "icon", "source": "./images/icons/keyboard_backspace_white_right.svg", "type": "Image", "unnamed": 1, "visible": True}
 homeScreen_coffeeCup_image = {"container": coffee_home_Home, "id": "image", "source": "./images/Cups/home_dark.svg", "type": "Image", "unnamed": 1, "visible": True}
+
+chooseCoffee_text = {"container": coffee_QQuickApplicationWindow, "text": "Coffee Selection", "type": "Text", "unnamed": 1, "visible": True}

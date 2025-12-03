@@ -51,22 +51,26 @@ def step(context):
         if waitForObject(element):
             test.passes(f"Element found: {element}")
             #mouseClick(waitForObject(names.homeScreen_getStartedButton_text), MouseButton.LeftButton)
+            
+@Then("I click to start")
+def step(context):
+    mouseClick(waitForObject(names.homeScreen_getStartedButton_text), MouseButton.LeftButton)
 
 @When("I click on cappucino button")
 def step(context):
-    mouseClick(waitForObject(names.button_AbstractButton), MouseButton.LeftButton)
+    cappucino_choosen = mouseClick(waitForObject(names.button_AbstractButton), MouseButton.LeftButton)
 
 @When("I click on latte button")
 def step(context):
-    mouseClick(waitForObject(names.button_AbstractButton_2), MouseButton.LeftButton)
+    latte_choosen = mouseClick(waitForObject(names.button_AbstractButton_2), MouseButton.LeftButton)
     
 @When("I click on espresso button")
 def step(context):
-    mouseClick(waitForObject(names.button_AbstractButton_3), MouseButton.LeftButton)
+    espresso_choosen = mouseClick(waitForObject(names.button_AbstractButton_3), MouseButton.LeftButton)
     
 @When("I click on macchiato button")
 def step(context):
-    mouseClick(waitForObject(names.button_AbstractButton_4), MouseButton.LeftButton)
+    macchiato_choosen = mouseClick(waitForObject(names.button_AbstractButton_4), MouseButton.LeftButton)
 
 @Then("cappucino make screen is displayed")
 def step(context):
@@ -121,15 +125,17 @@ def step(context):
     mouseClick(waitForObject(names.o_MultiEffect_2), 315, 209, Qt.LeftButton) #set sugar
     test.compare(waitForObjectExists(names.foam_Image).opacity, 1) #check if foam is decreased
     test.compare(waitForObjectExists(names.sugar_Image).opacity, 1) #check sugar
-
-@When("I click on ANY coffee")
+    
+@Then("Verify theme button on dark")
 def step(context):
-    test.warning("TODO implement I click on ANY coffee")
+    #mouseClick(waitForObject(names.theme_button), Qt.LeftButton)
+    test.compare(str(waitForObjectExists(names.chooseCoffee_text).text), "Coffee Selection")
+    test.compare(waitForObjectExists(names.chooseCoffee_text).color, "#fefefe")
 
-@Then("Verify theme button")
+@Then("Verify theme button on bright")
 def step(context):
-    test.warning("TODO implement Verify theme button")
-
-@Then("I click to start")
-def step(context):
-    mouseClick(waitForObject(names.homeScreen_getStartedButton_text), MouseButton.LeftButton)
+    mouseClick(waitForObject(names.theme_button), Qt.LeftButton)
+    test.compare(str(waitForObjectExists(names.chooseCoffee_text).text), "Coffee Selection")
+    test.compare(waitForObjectExists(names.chooseCoffee_text).color, "#121111")
+    
+    
