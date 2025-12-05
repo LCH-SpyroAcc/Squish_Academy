@@ -145,24 +145,54 @@ def step(context, coffee_type, ingredients, prep_time):
     match coffee_type:
         case "Cappuccino":
             coffee_cards = waitForObject(names.cappuccino_CoffeeCard)
-
+            
         case "Latte":
-            coffee_cards = waitFor0bject(names.latte_CoffeeCard)
-
+            coffee_cards = waitForObject(names.latte_CoffeeCard)
+            
         case "Espresso":
-            coffee_cards = waitFor0bject(names.espresso_CoffeeCard)
-
+            coffee_cards = waitForObject(names.espresso_CoffeeCard)
+            
         case "Macchiato":
-            coffee_cards = waitFor0bject(names.macchiato_CoffeeCard)
-
+            coffee_cards = waitForObject(names.macchiato_CoffeeCard)
+            
         case _:
             test.fail("Incorrect coffee name provided")
             
-    test.compare(card_object.coffeeName, coffee_type, "Checking if card name is correct")
-    test.compare(card_object.ingredients, ingredients, "Checking if coffee ingredients are correct")
-    test.compare(card_object.time, prep_time, "Checking if preparation time is correct")
+    test.compare(coffee_cards.coffeeName, coffee_type, "Checking if card name is correct")
+    test.compare(coffee_cards.ingredients, ingredients, "Checking if coffee ingredients are correct")
+    test.compare(coffee_cards.time, prep_time, "Checking if preparation time is correct")
     
 
-@Then("selected coffee settings are original")
-def step(context):
-    test.warning("TODO implement selected coffee settings are original")
+@Then("'|any|' card displays additions '|any|' which is original")
+def step(context, amount_coffee, amount_milk, amount_foam, amount_sugar):
+    #cappu - 60/60/60/0
+    #latte - 40/20/60/0
+    #espre - 80/0/0/0
+    #macch - 100/5/10/0
+    amount_things = None
+    match coffee_type:
+        case "Cappuccino":
+            coffee_cards = waitForObject(names.cappuccino_CoffeeCard)
+            mouseClick(names.cappuccino_CoffeeCard)
+            mouseClick(names.homeScreen_getStartedButton_icon) #back button?
+            #TODO
+            #click on coffee --> check every setting value (should be in MAP from 1st task)
+            #click back button
+            #click next coffee --> same tinginging++
+        case "Latte":
+            coffee_cards = waitForObject(names.latte_CoffeeCard)
+            mouseClick(names.cappuccino_CoffeeCard)
+            mouseClick(names.homeScreen_getStartedButton_icon)
+            
+        case "Espresso":
+            coffee_cards = waitForObject(names.espresso_CoffeeCard)
+            mouseClick(names.cappuccino_CoffeeCard)
+            mouseClick(names.homeScreen_getStartedButton_icon)
+            
+        case "Macchiato":
+            coffee_cards = waitForObject(names.macchiato_CoffeeCard)
+            mouseClick(names.cappuccino_CoffeeCard)
+            mouseClick(names.homeScreen_getStartedButton_icon)
+
+        case _:
+            test.fail("Incorrect coffee name provided")
