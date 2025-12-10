@@ -20,8 +20,11 @@
 # https://doc.qt.io/squish/behavior-driven-testing.html#performing-actions-during-test-execution-via-hooks
 
 # Detach (i.e. potentially terminate) all AUTs at the end of a scenario
+@OnScenarioStart
+def hook(context):
+    startApplication('coffeemachine')
+
 @OnScenarioEnd
 def hook(context):
     for ctx in applicationContextList():
         ctx.detach()
-
